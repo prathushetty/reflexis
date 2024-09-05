@@ -1,4 +1,3 @@
-#!/bin/bash
 #################################################################################
 ### Script to simulate cleanup of logs for testing purposes.
 ### Usage: sh db2archlogs_cleanup.sh <retention_days>
@@ -55,6 +54,8 @@
 ### Author: Prateek Kante, Reflexis Systems Inc.
 #################################################################################
 
+
+#!/bin/bash
 if [ -z "$1" ];then
 Retention=4
 else
@@ -62,7 +63,7 @@ Retention=$1
 fi
 HOST_NAME='hostname|cut -d"." -f1'
 FILE_DATE='date +%Y-%m-%d'
-BASEDIR=/C/ProgramData/Jenkins/.jenkins/workspace/test_db2archlogs_cleanup
+BASEDIR=/C/ProgramData/Jenkins/.jenkins/workspace/db2archlog_cleanup
 LOGGER=${BASEDIR}/${HOST_NAME}_${FILE_DATE}.log
 
 if [ ! -d "$BASEDIR" ]; then
