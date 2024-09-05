@@ -71,8 +71,8 @@ fi
 echo "Purging less than ${Retention} days">>$LOGGER
 echo "START purging :`date`">>$LOGGER
 ########################## db2archlogs Retention ###################################
-find /db2archlogs1 -type f -name "S*.LOG" -mtime +$Retention -exec rm -v {} \; >>$LOGGER
-find /db2archlogs1 -type f -name "S*.LOG".gz -mtime +$Retention -exec rm -v {} \; >>$LOGGER
+find /C/ProgramData/Jenkins/.jenkins/workspace/db2archlogs1 -type f -name "S*.LOG" -mtime +$Retention -exec rm -v {} \; >>$LOGGER
+find /C/ProgramData/Jenkins/.jenkins/workspace/db2archlogs1 -type f -name "S*.LOG".gz -mtime +$Retention -exec rm -v {} \; >>$LOGGER
 find /C/ProgramData/Jenkins/.jenkins/workspace/dbbackups/logs/scripts/db2archlogs_cleanup -type f -name "$HOST_NAME*.log" -mtime +2 -exec rm -v {} \; >>$LOGGER
 echo "END purging:`date`">>$LOGGER
 
