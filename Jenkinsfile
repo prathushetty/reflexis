@@ -23,8 +23,10 @@ pipeline {
             steps {
                 script {
                     // Make the script executable and run it
+                    bat """
                     powershell.exe -command "chmod +x db2archlogs_cleanup.sh"
                     powershell.exe -command "./db2archlogs_cleanup.sh ${params.RETENTION_DAYS}"
+                    """
                 }
             }
         }
