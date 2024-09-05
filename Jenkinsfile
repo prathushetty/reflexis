@@ -24,8 +24,8 @@ pipeline {
                 script {
                     // Make the script executable and run it
                     bat """
-                    sh "chmod +x db2archlogs_cleanup.sh"
-                    sh "./db2archlogs_cleanup.sh ${params.RETENTION_DAYS}"
+                    bash "chmod +x db2archlogs_cleanup.sh"
+                    bash "./db2archlogs_cleanup.sh ${params.RETENTION_DAYS}"
                     """
                 }
             }
