@@ -61,8 +61,8 @@ Retention=4
 else
 Retention=$1
 fi
-HOST_NAME='hostname|cut -d"." -f1'
-FILE_DATE='date +%Y-%m-%d'
+HOST_NAME=`hostname|cut -d"." -f1`
+FILE_DATE=`date +%Y-%m-%d`
 BASEDIR=/C/ProgramData/Jenkins/.jenkins/workspace/db2archlog_cleanup
 LOGGER=${BASEDIR}/${HOST_NAME}_${FILE_DATE}.log
 
