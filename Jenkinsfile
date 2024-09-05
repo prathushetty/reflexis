@@ -33,15 +33,15 @@ pipeline {
         }
     }
 
-    post {
-        always {
-            // Archive the logs generated during the script execution
-            archiveArtifacts artifacts: '**/*.log', allowEmptyArchive: true
-        }
+    // post {
+    //     always {
+    //         // Archive the logs generated during the script execution
+    //         archiveArtifacts artifacts: '**/*.log', allowEmptyArchive: true
+    //     }
 
-        cleanup {
-            // Clean up workspace after the build is done
-            cleanWs()
-        }
-    }
+    //     // cleanup {
+    //     //     // Clean up workspace after the build is done
+    //     //     cleanWs()
+    //     // }
+    // }
 }
