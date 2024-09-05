@@ -26,7 +26,7 @@ pipeline {
                     // Make the script executable and run it
                     bat """
                     ${env.GIT_BASH_PATH} -c "chmod +x db2archlogs_cleanup.sh"
-                    ${env.GIT_BASH_PATH} -c  "./db2archlogs_cleanup.sh ${params.RETENTION_DAYS}"
+                    ${env.GIT_BASH_PATH} -c  "db2archlogs_cleanup.sh ${params.RETENTION_DAYS}"
                     """
                 }
             }
