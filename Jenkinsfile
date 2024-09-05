@@ -9,6 +9,7 @@ pipeline {
     environment {
         GIT_REPO_URL = 'https://github.com/prathushetty/reflexis.git'
         GIT_BRANCH = 'main' 
+        GIT_BASH_PATH = 'C:\\Program Files\\Git\\bin\\bash.exe'  
     }
 
     stages {
@@ -24,8 +25,8 @@ pipeline {
                 script {
                     // Make the script executable and run it
                     bat """
-                    bash "chmod +x db2archlogs_cleanup.sh"
-                    bash "./db2archlogs_cleanup.sh ${params.RETENTION_DAYS}"
+                    "${env.GIT_BASH_PATH}" -c "chmod +x db2archlogs_cleanup.sh"
+                    "${env.GIT_BASH_PATH}" -c  "./db2archlogs_cleanup.sh ${params.RETENTION_DAYS}"
                     """
                 }
             }
