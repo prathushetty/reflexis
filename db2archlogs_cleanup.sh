@@ -63,7 +63,7 @@ fi
 HOST_NAME='hostname|cut -d"." -f1'
 FILE_DATE='date +%Y-%m-%d'
 BASEDIR="/C/ProgramData/Jenkins/.jenkins/workspace/test_db2archlogs_cleanup"
-LOGGER=${BASEDIR}/${HOST_NAME}_${FILE_DATE}.log
+LOGGER="${BASEDIR}/${HOST_NAME}_${FILE_DATE}.log"
 
 if [ ! -d "$BASEDIR" ]; then
     mkdir -p $BASEDIR
